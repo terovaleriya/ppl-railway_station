@@ -1,6 +1,6 @@
 from typing import List
 
-from src.main import Station, Rail, Platform, Timetable, TimetableEntry
+from main import Station, Rail, Platform, Timetable, TimetableEntry, Action
 
 
 def build(filename: str) -> (Station, Timetable):
@@ -17,5 +17,5 @@ def build(filename: str) -> (Station, Timetable):
             elif t == 'L':
                 station.add_link(s[0], s[1])
             elif t == 'T':
-                entries.append(TimetableEntry(int(s[0]), int(s[1]), int(s[2])))
-    (station, Timetable(entries))
+                entries.append(TimetableEntry(s[0], int(s[1]), int(s[2]), int(s[3]), s[4], Action[s[5]]))
+    return station, Timetable(entries)
