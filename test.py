@@ -13,7 +13,7 @@ class Tests(unittest.TestCase):
         state.reset_events()
 
     def test_events(self):
-        station, timetable = build("a.txt")
+        station, timetable = build("timetable_example.txt")
         state = StationState(station)
         state.add_timetable(timetable)
 
